@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess Number</title>
+    <style>
+        body { background: #05070a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: #0d1117; padding: 30px; border-radius: 15px; border: 1px solid #21262d; text-align: center; }
+        input, button { padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h3>🔢 1 dan 100 gacha son o'yladim</h3>
+    <input type="number" id="inp" placeholder="Soningizni yozing">
+    <button onclick="guess()">TEKSHIRISH</button>
+    <p id="res"></p>
+</div>
+<script>
+    const num = Math.floor(Math.random() * 100) + 1;
+    function guess() {
+        const val = document.getElementById('inp').value;
+        const res = document.getElementById('res');
+        if(val == num) res.innerText = "🎉 REKORD! To'g'ri topdingiz!";
+        else if(val < num) res.innerText = "📉 Kattaqroq son yozing!";
+        else res.innerText = "📈 Kichikroq son yozing!";
+    }
+</script>
+</body>
+</html>
